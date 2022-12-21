@@ -11,11 +11,14 @@
       <th>Nom</th>
       <th>Prix</th>
       <th>Détails</th>
+      <th>Modifier l'objet</th>
     </tr>
     <tr th:each="produit : ${produits}">
       <td th:text="${produit.id}"></td>
       <td th:text="${produit.nom}"></td>
-      <td th:text="${produit.prix}"></td>
+      <td th:text="${produit.prix} + euros"></td>
+       <td><a th:href="@{/produit/detail/{id}(id=${produit.id})}">details</a></td>
+       <td><a th:href="@{/produit/edit/{id}(id=${produit.id})}">modifier</a></td>
     </tr>
   </table>
   
